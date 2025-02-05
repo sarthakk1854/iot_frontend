@@ -1,0 +1,53 @@
+<!-- <div class="container mt-3">
+  <div class="row mt-5">
+    <div class="col-12">
+      <div class="card rounded-3">
+        <div class="card-header bg-dark-subtle d-flex justify-content-between">
+          <h4 class="fw-bold">Update Device</h4>
+          <button class="btn btn-light" routerLink="/device">
+            Back &nbsp;<i class="fa fa-arrow-left"></i>
+          </button>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="updateDevice()" class="row g-3">
+            <div class="col-12 col-md-6 col-lg-3">
+              <label for="deviceName" class="form-label">Device Name</label>
+              <input
+                type="text"
+                [(ngModel)]="device.name"
+                class="form-control"
+                id="deviceName"
+                name="deviceName"
+                placeholder="Enter Device Name"
+              />
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <label for="deviceType" class="form-label">Device Type</label>
+              <select [(ngModel)]="device.type" class="form-select" id="deviceType" name="deviceType">
+                <option value="Temperature" [selected]="device.type === 'Temperature'">Temperature</option>
+                <option value="Humidity" [selected]="device.type === 'Humidity'">Humidity</option>
+                <option value="Motion" [selected]="device.type === 'Motion'">Motion</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <label for="status" class="form-label">Device Status</label>
+              <select [(ngModel)]="device.status" class="form-select" id="status" name="status">
+                <option value="Active" [selected]="device.status === 'Active'">Active</option>
+                <option value="Inactive" [selected]="device.status === 'Inactive'">Inactive</option>
+              </select>
+            </div>
+            <div class="col-12 mt-4">
+              <div class="d-flex justify-content-between">
+                <div></div>
+                <div>
+                  <button type="submit" class="btn btn-success mx-2">Update Device</button>
+                  <button type="reset" class="btn btn-warning mx-2">Clear</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

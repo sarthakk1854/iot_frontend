@@ -1,0 +1,143 @@
+/* Sidebar */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background: white; /* Gradient background */
+  color: white;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+#sidebar.active {
+  transform: translateX(-260px); /* Slide-out effect */
+}
+
+.mt-2 {
+  margin-top: -0.5rem !important;
+}
+
+#sidebar .fs-4 {
+  margin-left: 10px; /* Adjust title spacing */
+}
+
+/* Toggle Button */
+#toggleSidebar {
+  position: absolute;
+  top: 5px; /* Aligns toggle button with the title */
+  left: 265px; /* Position near the sidebar edge */
+  background-color: #63dbfb; /* Match the theme */
+  color: white;
+  text-align: center;
+  padding: 8px 12px;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease; /* Smooth hover effect */
+  z-index: 2;
+}
+
+#toggleSidebar:hover {
+  background-color: #0673cf; /* Darker shade for hover */
+  transform: scale(1.1); /* Hover scaling */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Button glow */
+}
+
+/* Sidebar Nav Links */
+.navbarHover .nav-link {
+  transition: background-color 0.3s, transform 0.2s;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.navbarHover .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.navbarHover .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  font-weight: bold;
+}
+
+/* Responsive Hover for Mobile */
+@media (max-width: 768px) {
+  .navbarHover .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: none;
+  }
+}
+
+/* Page Content Wrapper */
+#page-content-wrapper {
+  margin-left: 250px;
+  transition: margin-left 0.4s ease-in-out;
+}
+
+#page-content-wrapper.sidebar-active {
+  margin-left: 0;
+}
+
+/* Footer */
+footer {
+  text-align: right;
+  background-color: #ff4500; /* Match sidebar theme */
+  padding: 10px 20px;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+  #sidebar {
+    transform: translateX(-260px);
+  }
+
+  #sidebar.active {
+    transform: translateX(0);
+  }
+
+  #page-content-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper.sidebar-active {
+    margin-left: 250px;
+  }
+}
+
+/* Title Margin Adjustment */
+#sidebartitle {
+  margin-bottom: 0;
+}
+
+
+
+/* Space between sidebar items */
+.navbarHover {
+  margin-bottom: 20px; /* Add space between items */
+}
+
+/* Add padding to the body to avoid overlap with fixed navbar */
+body {
+  padding-top: 60px; /* Adjust for the fixed navbar */
+}
+
+/* Icons style */
+.fa-solid {
+  font-size: 18px;
+  padding-right: 8px;
+}
+
+/* Active link style */
+
+/* General container */
+.container-fluid {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}

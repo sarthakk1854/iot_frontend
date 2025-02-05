@@ -1,0 +1,52 @@
+<div class="d-flex flex-column min-vh-100">
+  <!-- Navbar - Positioned at the top of the page -->
+  <app-navbar></app-navbar> <!-- Add your navbar component here -->
+
+  <div class="d-flex ">
+    <!-- Sidebar -->
+    <div id="sidebar" [class.active]="isSidebarActive" class="bg-dark text-white">
+      <div class="d-flex flex-column flex-shrink-0 p-3 vh-100">
+        <!-- Toggle Button -->
+        <button id="toggleSidebar" class="btn text-white m-3 " style="top: -2px;" (click)="toggleSidebar()">
+          <i class="fa-solid fa-bars text-center " style="padding: 4px;"></i>
+        </button>
+        <div class="d-flex">
+        <img src="../assets/image/iot.png" alt="iot" class="rounded-circle" width="45" height="45">
+        <h5 class="fw-bold text-center m-2"> Monitoring </h5>
+        </div>
+        <hr style="margin-top: 7px;">
+        <ul class="nav flex-column mb-auto mt-3" >
+          <li class="nav-item navbarHover">
+            <a routerLink="/dashboard" routerLinkActive="active" class="nav-link text-white">
+              <i class="fa-solid fa-house px-2"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item navbarHover">
+            <a routerLink="/device" class="nav-link text-white" routerLinkActive="active">
+              <i class="fa-solid fa-gear px-2"></i> Manage Devices
+            </a>
+          </li>
+          <li class="nav-item navbarHover">
+            <a routerLink="/report" class="nav-link text-white" routerLinkActive="active">
+              <i class="fa-solid fa-file-lines px-2"></i> Generate Reports
+            </a>
+          </li>
+          <li class="nav-item navbarHover">
+            <a routerLink="#" class="nav-link text-white" (click)="logoutUser()" routerLinkActive="active">
+              <i class="fa-solid fa-right-from-bracket px-2"></i> LogOut
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper" [class.sidebar-active]="isSidebarActive" class="w-100">
+      <div class="container-fluid">
+        <div class="row">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

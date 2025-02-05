@@ -1,0 +1,62 @@
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2>Device Registration</h2>
+            <form [formGroup]="deviceForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="name">Device Name</label>
+                    <input id="name" formControlName="name" class="form-control" placeholder="Enter device name" />
+                </div>
+                <div class="form-group">
+                    <label for="type">Device Type</label>
+                    <select id="type" formControlName="type" class="form-control">
+                        <option value="float">Float</option>
+                        <option value="boolean">Boolean</option>
+                        <option value="string">String</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="min">Min Value</label>
+                    <input id="min" formControlName="min" type="number" class="form-control" placeholder="Enter min value" />
+                </div>
+                <div class="form-group">
+                    <label for="max">Max Value</label>
+                    <input id="max" formControlName="max" type="number" class="form-control" placeholder="Enter max value" />
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="table-responsive mt-5 rounded-3 border-3">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Register Name</th>
+                    <th>Type</th>
+                    <th>Min</th>
+                    <th>Max</th>
+                    <th>Latest value</th>
+                    <th>Time Stamp</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let device of devices">
+                    <td>{{ device.id }}</td>
+                    <td>{{ device.name }}</td>
+                    <td>{{ device.device_type }}</td>
+                    <td>{{ device.min_value }}</td>
+                    <td>{{ device.max_value }}</td>
+                    <td>{{ device.latest_value }}</td>
+                    <td>{{ device.timestamp }}</td>
+                    <td>
+                        <button class="btn text-primary"><i class="fa-solid fa-pen-to-square fa-xl"></i></button>
+                        <button class="btn text-danger"><i class="fa-solid fa-trash fa-xl"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> -->

@@ -1,0 +1,74 @@
+<div class="container ">
+  <!-- Add/Update Device Form -->
+  <div class="row ">
+    <div class="col-12">
+      <div class="card rounded-3 ">
+        <div class="card-header bg-dark-subtle">
+          <h4 class="fw-bold">{{ currentDeviceId ? 'Edit' : 'Add' }} Device</h4>
+        </div>
+        <div class="card-body ">
+          <form (ngSubmit)="addOrUpdateDevice()" class="row g-3">
+            <div class="col-12 col-md-6 col-lg-3">
+              <label for="deviceName" class="form-label">Device Name</label>
+              <input type="text" [(ngModel)]="deviceName" class="form-control" id="deviceName" name="deviceName"
+                placeholder="Enter Device Name" required>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <label for="type" class="form-label">Device Type</label>
+              <select [(ngModel)]="deviceType" class="form-select" id="type" name="type" required>
+                <option value="" disabled selected hidden>Select Device Type</option>
+                <option value="Temperature Sensor">Temperature Sensor</option>
+                <option value="Humidity Sensor">Humidity Sensor</option>
+                <option value="Motion Sensor">Motion Sensor</option>
+              </select>
+            </div>
+            <div class="col-12 text-end mt-4">
+              <button type="submit" class="btn btn-dark mx-2"
+                [disabled]="!deviceName || !deviceType">{{ currentDeviceId ? 'Update' : 'Add' }}
+                Device</button>
+              <button type="button" class="btn btn-success mx-2" (click)="clearForm()">Clear</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Device Table -->
+  <div class="table-responsive mt-3 rounded-3 border-3">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th class="bg-secondary-subtle">Id</th>
+          <th class="bg-secondary-subtle">Device Name</th>
+          <th class="bg-secondary-subtle">Device Type</th>
+          <th class="bg-secondary-subtle">Status</th>
+          <th class="bg-secondary-subtle">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let device of devices">
+          <td>{{ device.id }}</td>
+          <td>{{ device.name }}</td>
+          <td>{{ device.type }}</td>
+          <td>{{ device.status }}</td>
+          <td>
+            <button class="btn"
+              [ngClass]="{ 'text-success': device.status === 'Inactive', 'text-danger': device.status === 'Active' }"
+              (click)="toggleState(device)">
+              <i class="fa-solid"
+                [ngClass]="{ 'fa-play': device.status === 'Inactive', 'fa-pause': device.status === 'Active' }"></i>
+            </button>
+
+            <button class="btn text-primary" (click)="editDevice(device.id!)">
+              <i class="fa-solid fa-pen-to-square fa-xl"></i>
+            </button>
+            <button class="btn text-danger" *ngIf="device.id" (click)="deleteDevice(device.id)">
+              <i class="fa-solid fa-trash fa-xl"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
